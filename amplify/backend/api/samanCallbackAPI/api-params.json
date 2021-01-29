@@ -1,0 +1,52 @@
+{
+    "paths": [
+        {
+            "name": "/callback",
+            "lambdaFunction": "samanCallback",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/callback"
+        },
+        {
+            "name": "/secureCallback",
+            "lambdaFunction": "samanCallback",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/secureCallback"
+        }
+    ],
+    "resourceName": "samanCallbackAPI",
+    "apiName": "samanCallbackAPI",
+    "functionArns": [
+        {
+            "lambdaFunction": "samanCallback"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-samanamplify-main-64203-authRole",
+        "unAuthRoleName": "amplify-samanamplify-main-64203-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "samanCallback",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

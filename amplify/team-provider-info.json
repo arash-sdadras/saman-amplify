@@ -10,6 +10,11 @@
       "StackName": "amplify-samanamplify-main-64203",
       "StackId": "arn:aws:cloudformation:ap-southeast-2:795632803181:stack/amplify-samanamplify-main-64203/19358490-61fd-11eb-8f65-0a9f1c0bf68e",
       "AmplifyAppId": "d3caz7b7kequqw"
+    },
+    "categories": {
+      "auth": {
+        "cognito547f866a": {}
+      }
     }
   }
 }
