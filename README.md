@@ -25,7 +25,7 @@ The code you'll need to host somewhere so that it can execute is:
 
 The callback function is a Python Lambda function that is triggered through the API gateway whenever the page is refreshed and REST call is made to teh API Gateway.
 
-# Architectural Considerations
+## Architectural Considerations
 
 Some of the architectural considerations:
 - All communications through TLS
@@ -33,7 +33,7 @@ Some of the architectural considerations:
 - Configration of WAF to apply a number of security policies including OWASPP, etc.
 
 
-# Architectural Constraints & Technical Debts:
+## Architectural Constraints & Technical Debts:
 
 1- Considerations on creation of private VPCs
 
@@ -55,7 +55,7 @@ While the architectural choices made (Lamda, Static site created by Amplify) del
 There are a few other architectural options to achieve similar outcome.
 
 
-# Architectural options # 1 - AWS Elastic Beanstalk
+### Architectural options # 1 - AWS Elastic Beanstalk
 
 The Beanstalk takes care of setting up majority of the components on AWS.
 
@@ -63,13 +63,13 @@ In this architecture, the Python code (required changes) and the static page wil
 This option will be costly (average).
 
 
-# Architectural options # 2 - A container on K8 (EKs)
+### Architectural options # 2 - A container on K8 (EKs)
 
 The Python callback code (with required change) and static page will be set up as a container, managed on EKS for better scalability and portability. 
 In this case, you will have the cost of Cluster and the nodes (around $4 per day) - high.
 
 
-# Architectural options # 3 - Serverless Fargate on K8 (EKs)
+### Architectural options # 3 - Serverless Fargate on K8 (EKs)
 
 The Python callback code will be set up as a function on fargate on EKS for better scalability, interoperability and ease of maintenance and management.
 The cost will be average since the cluster still needs to be up.
