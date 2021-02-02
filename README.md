@@ -2,6 +2,7 @@
 
 This project is a showcase of AWS Amplify to build and deploy a simple webpage with react and an AWS Lambda backend function written in Python.
 
+
 ## Overview
 
 The web app consists of two components:
@@ -25,6 +26,7 @@ The code you'll need to host somewhere so that it can execute is:
 
 The callback function is a Python Lambda function that is triggered through the API gateway whenever the page is refreshed and REST call is made to teh API Gateway.
 
+
 ## Architectural Considerations
 
 Some of the architectural considerations:
@@ -44,6 +46,7 @@ The static page can however be looked at later.
 2- IAM roles have been created and applied for all resources. There is room to harden the assignment of the roles to the service account.
 
 3- Expose the APIs under the custom domain name (samanapi.sgsys.com.au)
+
 
 
 ## Other Architectural options
